@@ -1,0 +1,182 @@
+/* VARIABLES Y RESET BÁSICO */
+:root {
+    --color-primary: #007BFF; /* Azul para botones/destacados */
+    --color-secondary: #28a745; /* Verde complementario */
+    --color-background: #f4f4f9; /* Fondo muy claro */
+    --color-text: #333; /* Texto oscuro */
+    --color-dark: #222; /* Fondo de footer/header */
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-background);
+}
+
+/* UTILIDADES Y SECCIONES */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--color-dark);
+}
+
+/* HERO SECTION (HEADER) */
+.hero {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+/* BOTONES */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.button.primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.button.primary:hover {
+    background-color: #0056b3;
+}
+
+.button.secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* ACERCA DE MÍ (GRID) */
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.skills ul {
+    list-style: none;
+}
+
+.skills ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* PROYECTOS */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.project-card .tech-stack {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* FOOTER (CONTACTO) */
+.footer {
+    background-color: var(--color-dark);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin-bottom: 15px;
+}
+
+.footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #99ccff;
+}
+
+.footer .copy {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    
+    .grid-2-cols {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
