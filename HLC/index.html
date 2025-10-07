@@ -1,84 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio Profesional | [Tu Nombre]</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio Eliel Zeta</title>
+  <meta name="description" content="Portafolio personal — Informático en formación, curioso y optimista.">
+  <!-- Fuente simple -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* -----------------------------
+       Reset minimal y variables
+       ----------------------------- */
+    :root{
+      --bg: #0f1724; /* azul oscuro */
+      --card: #0b1220;
+      --muted: #9aa6bb;
+      --accent: #6ee7b7;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 12px;
+      --max-width: 1000px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#071023 0%, var(--bg) 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    /* Contenedor centrado */
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .avatar{
+      width:84px;height:84px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent), #5cc7f7);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#021018;font-size:28px;
+      flex:0 0 84px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.5);
+    }
+
+    h1{margin:0;font-size:20px}
+    .tagline{color:var(--muted);font-size:14px;margin-top:6px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:22px;
+      align-items:start;
+    }
+
+    /* Card */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Main column */
+    .about p{margin:0 0 12px 0;color:#dfeaf5}
+    .about .lead{font-size:15px;margin-bottom:10px}
+
+    .skills{
+      display:flex;flex-wrap:wrap;gap:10px;margin-top:10px
+    }
+    .skill{
+      background:var(--glass);padding:8px 10px;border-radius:10px;font-weight:600;color:var(--muted);font-size:13px;border:1px solid rgba(255,255,255,0.02)
+    }
+
+    .projects{display:grid;gap:12px;margin-top:14px}
+    .project{
+      padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .project h3{margin:0 0 6px 0;font-size:16px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Right column */
+    .meta .meta-item{margin-bottom:12px}
+    .meta .label{color:var(--muted);font-size:13px}
+    .meta .value{font-weight:600}
+
+    .contact a{display:inline-block;text-decoration:none;padding:10px 12px;border-radius:10px;background:var(--accent);color:#05201a;font-weight:700}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr}
+      .avatar{width:64px;height:64px;font-size:22px}
+    }
+  </style>
 </head>
 <body>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Hola, soy Eliel 👋</h1>
-            <h2>**[Tu Título: Ej. Desarrollador Web Frontend]**</h2>
-            <p>Construyo experiencias digitales limpias y funcionales. Echa un vistazo a mi trabajo.</p>
-            <a href="#proyectos" class="button primary">Ver Proyectos</a>
-        </div>
+  <div class="wrap">
+    <header>
+      <div class="avatar" aria-hidden="true">TN</div>
+      <div>
+        <h1>[Tu Nombre] — Informático en formación</h1>
+        <div class="tagline">Curioso por naturaleza · Positivo · Optimista · Aprendiendo cada día</div>
+      </div>
     </header>
 
-    <main>
-        
-        <section id="acerca-de" class="section">
-            <h2>Acerca de Mí</h2>
-            <div class="grid-2-cols">
-                <p>Soy un profesional apasionado por **[Tu Sector]** con X años de experiencia en **[Tu Habilidad Principal]**. Mi enfoque se centra en **[Tu Valor Único, Ej. la usabilidad y el código escalable]**. Siempre busco aprender y aplicar las últimas tecnologías.</p>
-                <div class="skills">
-                    <h3>Habilidades Clave</h3>
-                    <ul>
-                        <li>**HTML5** & **CSS3** (Responsive Design)</li>
-                        <li>**JavaScript** (ES6+)</li>
-                        <li>**[Framework/Librería Principal, Ej. React/Vue/Angular]**</li>
-                        <li>**[Herramienta de Diseño, Ej. Figma/Photoshop]**</li>
-                        <li>**[Otro, Ej. SQL, Node.js, Python]**</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="grid">
+      <!-- Columna principal -->
+      <main>
+        <section class="card about">
+          <div class="lead">Hola, soy [Tu Nombre]. Actualmente soy <strong>informático en plena formación</strong>. Me apasiona entender cómo funcionan las cosas: desde redes y sistemas hasta interfaces básicas. Siempre curioso, optimista y con ganas de experimentar. Aquí encontrarás una selección de mis intereses, habilidades y proyectos de ejemplo.</div>
+
+          <h4 style="margin-top:10px;margin-bottom:8px">¿Qué me define?</h4>
+          <p>Me describo como una persona muy curiosa: investigo, leo documentación y me pongo manos a la obra. Mantengo una actitud positiva ante los errores (los veo como aprendizaje) y siempre procuro aportar energía optimista a los equipos y proyectos.</p>
+
+          <h4 style="margin-top:12px;margin-bottom:8px">Habilidades</h4>
+          <div class="skills">
+            <div class="skill">HTML &amp; CSS</div>
+            <div class="skill">Fundamentos de JavaScript</div>
+            <div class="skill">Sistemas Linux</div>
+            <div class="skill">Git &amp; GitHub</div>
+            <div class="skill">SQL básico</div>
+            <div class="skill">Resolución de problemas</div>
+            <div class="skill">Trabajo en equipo</div>
+          </div>
+
+          <h4 style="margin-top:12px;margin-bottom:8px">Proyectos destacados</h4>
+          <div class="projects">
+            <article class="project">
+              <h3>Proyecto: Visualizador de temperaturas (Ejemplo)</h3>
+              <p>Interfaz sencilla que consume un JSON local con temperaturas por localidad. Ideal para practicar fetch/local JSON y filtros.</p>
+            </article>
+
+            <article class="project">
+              <h3>Proyecto: Mini web estática</h3>
+              <p>Landing informativa con HTML y CSS responsive — enfoque en accesibilidad y diseño limpio.</p>
+            </article>
+
+            <article class="project">
+              <h3>Proyecto: Scripts de automatización</h3>
+              <p>Pequeños scripts para tareas repetitivas en Linux. Aprendizaje práctico de bash y comandos útiles.</p>
+            </article>
+          </div>
         </section>
 
-        <section id="proyectos" class="section projects-grid">
-            <h2>Proyectos Destacados</h2>
-
-            <div class="project-card">
-                <h3>Proyecto Alfa: **[Nombre del Proyecto]**</h3>
-                <p class="description">Una aplicación web para **[Descripción corta y objetivo]**.</p>
-                <p class="tech-stack">**Tecnologías:** HTML, CSS, JavaScript, **[Otra]**</p>
-                <a href="[ENLACE_A_LA_DEMO]" target="_blank" class="button secondary">Ver Demo</a>
-                <a href="[ENLACE_A_GITHUB]" target="_blank" class="button secondary">Código Fuente</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Proyecto Beta: **[Nombre del Proyecto]**</h3>
-                <p class="description">Plataforma de **[Descripción corta y objetivo]**.</p>
-                <p class="tech-stack">**Tecnologías:** **[Tecnología Principal]**, SCSS, **[Otra]**</p>
-                <a href="[ENLACE_A_LA_DEMO]" target="_blank" class="button secondary">Ver Demo</a>
-                <a href="[ENLACE_A_GITHUB]" target="_blank" class="button secondary">Código Fuente</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Proyecto Gamma: **[Nombre del Proyecto]**</h3>
-                <p class="description">Diseño y desarrollo de un sitio web corporativo para **[Cliente/Propósito]**.</p>
-                <p class="tech-stack">**Tecnologías:** HTML, CSS puro, **[Otra]**</p>
-                <a href="[ENLACE_A_LA_DEMO]" target="_blank" class="button secondary">Ver Demo</a>
-                <a href="[ENLACE_A_GITHUB]" target="_blank" class="button secondary">Código Fuente</a>
-            </div>
-
+        <section class="card" style="margin-top:14px">
+          <h4 style="margin:0 0 8px 0">Sobre mí (un poco más de relleno)</h4>
+          <p style="margin-bottom:8px;color:var(--muted)">Me gusta leer sobre nuevas tecnologías, probar tutoriales y tomar notas. Fuera del teclado disfruto caminando, la música y tomando cafés mientras aprendo algo nuevo. Creo que una buena combinación de curiosidad y constancia abre muchas puertas.</p>
         </section>
+      </main>
 
-    </main>
+      <!-- Columna derecha -->
+      <aside>
+        <div class="card meta">
+          <div class="meta-item">
+            <div class="label">Ubicación</div>
+            <div class="value">[Tu Ciudad, País]</div>
+          </div>
+          <div class="meta-item">
+            <div class="label">Estado</div>
+            <div class="value">Formación / Estudiante</div>
+          </div>
+          <div class="meta-item">
+            <div class="label">Disponibilidad</div>
+            <div class="value">Prácticas / Proyectos personales</div>
+          </div>
 
-    <footer id="contacto" class="footer">
-        <h2>Contacto</h2>
-        <p>¿Tienes un proyecto en mente? Hablemos.</p>
-        <p>📧 Correo: **[tu_correo@ejemplo.com]**</p>
-        <div class="social-links">
-            <a href="[ENLACE_LINKEDIN]" target="_blank">LinkedIn</a> |
-            <a href="[ENLACE_GITHUB]" target="_blank">GitHub</a> |
-            <a href="[ENLACE_OTRO_PORTAL]" target="_blank">Medium/Web</a>
+          <div style="margin-top:8px" class="contact">
+            <div class="label">Contacto</div>
+            <div style="margin-top:8px"><a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a></div>
+          </div>
         </div>
-        <p class="copy">&copy; 2025 [Tu Nombre]. Construido con 💚.</p>
-    </footer>
 
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 8px 0">Notas rápidas</h4>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Aprendo rápido y disfruto documentar mis procesos.</li>
+            <li>Prefiero soluciones limpias y fáciles de mantener.</li>
+            <li>Busco colaborar en proyectos prácticos.</li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      <div style="padding-top:14px">© <span id="year">2025</span> [Tu Nombre]. Hecho con HTML &amp; CSS — listo para mejorar con JavaScript.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Pequeño script sólo para año (no requerido). Puedes eliminarlo si quieres 100% sin JS.
+    try{document.getElementById('year').textContent = new Date().getFullYear()}catch(e){}
+  </script>
 </body>
 </html>
